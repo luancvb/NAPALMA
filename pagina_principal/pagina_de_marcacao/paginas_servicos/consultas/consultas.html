@@ -19,6 +19,10 @@
                 <option value="dermatologia">Dermatologia</option>
                 <option value="pediatria">Pediatria</option>
                 <option value="ortopedia">Ortopedia</option>
+                <option value="otorinoLaringologia">OtorinoLaringologia</option>
+                <option value="neurologia">Neurologia</option>
+                <option value="clinicoGeral">Clinico Geral</option>
+
             </select>
         </div>
         <div class="form-group" id="location-group" style="display: none;">
@@ -33,7 +37,9 @@
                 <option value="">Selecione...</option>
             </select>
         </div>
-        <button id="book-appointment" style="display: none;">Marcar Consulta</button>
+        <button id="book-appointment" onclick="saveData(); navigateToConfirmacao('confirmacao.html')"
+            style="display: none;">Marcar
+            Consulta</button>
     </div>
     <script src="./script.js"></script>
 </body>

@@ -1,44 +1,74 @@
 const scheduleData = {
     cardiologia: {
-        'Clínica A': [
+        'Centro de Saúde Nossa Senhora Aparecida': [
             { date: '2024-10-01', time: '10:00' },
             { date: '2024-10-02', time: '14:00' }
         ],
-        'Clínica B': [
+        'UBS Faisqueira': [
             { date: '2024-10-03', time: '09:00' },
             { date: '2024-10-04', time: '11:00' }
         ]
     },
     dermatologia: {
-        'Clínica C': [
+        'UBS Luiz Gonzaga Ramos': [
             { date: '2024-10-05', time: '08:00' },
             { date: '2024-10-06', time: '13:00' }
         ],
-        'Clínica D': [
+        'PSF São Geraldo': [
             { date: '2024-10-07', time: '15:00' },
             { date: '2024-10-08', time: '16:00' }
         ]
     },
     pediatria: {
-        'Clínica E': [
+        'UBS Ismael Libanio': [
             { date: '2024-10-09', time: '10:00' },
             { date: '2024-10-10', time: '14:00' }
         ],
-        'Clínica F': [
+        'UBS Puericultura Pouso Alegre': [
             { date: '2024-10-11', time: '09:00' },
             { date: '2024-10-12', time: '11:00' }
         ]
     },
     ortopedia: {
-        'Clínica G': [
+        'Centro de Saúde Adelson dos Reis Matias': [
             { date: '2024-10-13', time: '08:00' },
             { date: '2024-10-14', time: '13:00' }
         ],
-        'Clínica H': [
+        'UBS Algodão': [
             { date: '2024-10-15', time: '15:00' },
             { date: '2024-10-16', time: '16:00' }
         ]
-    }
+    },
+    otorinoLaringologia: {
+        'Centro de Saúde Adelson dos Reis Matias': [
+            { date: '2024-10-13', time: '08:00' },
+            { date: '2024-10-14', time: '13:00' }
+        ],
+        'UBS Algodão': [
+            { date: '2024-10-15', time: '15:00' },
+            { date: '2024-10-16', time: '16:00' }
+        ]
+    },
+    neurologia: {
+        'Centro de Saúde Adelson dos Reis Matias': [
+            { date: '2024-10-13', time: '08:00' },
+            { date: '2024-10-14', time: '13:00' }
+        ],
+        'UBS Algodão': [
+            { date: '2024-10-15', time: '15:00' },
+            { date: '2024-10-16', time: '16:00' }
+        ]
+    },
+    clinicoGeral: {
+        'Centro de Saúde Adelson dos Reis Matias': [
+            { date: '2024-10-13', time: '08:00' },
+            { date: '2024-10-14', time: '13:00' }
+        ],
+        'UBS Algodão': [
+            { date: '2024-10-15', time: '15:00' },
+            { date: '2024-10-16', time: '16:00' }
+        ]
+    },
 };
 
 document.getElementById('specialty').addEventListener('change', function () {
@@ -96,3 +126,18 @@ document.getElementById('schedule').addEventListener('change', function () {
         bookButton.style.display = 'none';
     }
 });
+
+function saveData() {
+    const specialty = document.getElementById('specialty').value;
+    const location = document.getElementById('location').value;
+    const schedule = document.getElementById('schedule').value;
+
+    localStorage.setItem('specialty', specialty);
+    localStorage.setItem('location', location);
+    localStorage.setItem('schedule', schedule);
+
+    alert('Dados salvos!');
+}
+function navigateToConfirmacao(page) {
+    window.location.href = "pagina-de-confirmacao/confirmacao.html";
+}
